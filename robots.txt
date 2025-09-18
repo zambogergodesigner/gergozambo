@@ -1,3 +1,4 @@
 User-agent: *
 Disallow: /website-archive/
+Disallow: /docs/
 Allow: /
