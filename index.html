@@ -9,103 +9,74 @@
   <link rel="apple-touch-icon" href="icon.png">
   <style>
 
-    ::-moz-selection { background:#e4e4e7; color: #09091b; text-shadow: none; }
-    ::selection { background:#e4e4e7; color: #09091b; text-shadow: none; }
+    ::-moz-selection { color: #09091b; background: #e4e4e7; text-shadow: none; }
+    ::selection { color: #09091b; background: #e4e4e7; text-shadow: none; }
 
-    html { background: #09091b; color: #fdfdfa; font-family: Georgia, serif; font-size: 1rem; line-height: 1.35; letter-spacing: .01rem; }
+    html { font-family: Georgia, serif; font-size: 1rem; line-height: 1.35; letter-spacing: .01rem; color: #fdfdfa; background: #09091b; }
     body { margin: 0; padding: 0 1.3rem 1rem; }
     h1, h2, h3, h4 { font-weight: 400; }
-    abbr{ text-decoration: none; }
+    abbr { font-variant: small-caps; letter-spacing: 0.05rem; text-transform: lowercase; text-decoration: none; }
 
-    img {
-      border-radius: 0.5rem;
-      display: block;
-      /* Classic physical properties for broad support */
-      max-width: 100%;
-      height: auto;
-      /* Logical equivalents for modern UAs */
-      max-inline-size: 100%;
-      block-size: auto;
-    }
-
-    ul { font-family:'Courier New', Courier, monospace; list-style-type: none; padding: .5rem 0; }
+    ul { font-family: 'Courier New', Courier, monospace; list-style-type: none; padding: .5rem 0; letter-spacing: 0; }
     li { padding: .25rem 0; }
     hgroup { margin-top: 3rem; }
 
-    a {
-      color: #fdfdfa;
-      text-decoration: underline;
-      text-decoration-skip-ink: auto;
+    img {
+      display: block;
+      height: auto;
+      max-width: 100%;
+      border-radius: 0.5rem;
     }
-    a:visited, a:focus, a:hover { color: #9999A3; }
-    a:active { position: relative; top: 1px; }
 
+    a { color: #fdfdfa; text-decoration: underline; text-decoration-skip-ink: auto; }
+    a:not(.primary):not(.secondary):visited,
+    a:not(.primary):not(.secondary):focus,
+    a:not(.primary):not(.secondary):hover { color: #9999A3; }
+
+    /* Buttons */
     a.primary, a.secondary {
-      color: #09091b;
-      background: #fdfdfa;
       border-radius: 0.5rem;
       text-decoration: none;
       box-sizing: border-box;
-      border: 0;
       background-clip: padding-box;
       padding: .75rem 0;
     }
+    
 
-    a:visited.primary,
-    a:visited.secondary { color: inherit; background: inherit; }
+    /* Primary */
+    .primary { color: #09091b; background: #fdfdfa; border: 0; box-shadow: inset 0 0 0 2px transparent; }
+    .primary:hover, .primary:focus { color: #09091b; background: #e4e4e7; box-shadow: inset 0 0 0 2px #e4e4e7; }
 
-    /* Primary: stay light; hover = subtle shade + border; focus-visible ring */
-    a.primary {
-      color: #09091b;
-      background: #fdfdfa;
-      box-shadow: inset 0 0 0 2px transparent;
-    }
-    a:hover.primary, a:focus.primary {
-      background: #e4e4e7; /* subtle darken from selection color */
-      box-shadow: inset 0 0 0 2px #e4e4e7;
-    }
+    /* Secondary */
+    .secondary { color: #fdfdfa; background: #09091b; border: 2px solid currentColor; }
+    .secondary:hover, .secondary:focus { color: #fdfdfa; background: #232336; border-color: #fdfdfa; }
 
-    /* Secondary: stay dark; hover = slight lighten; clear focus ring */
-    a.secondary {
-      color: #fdfdfa;
-      background: #09091b;
-      border: 2px solid currentColor;
-    }
-    a:hover.secondary, a:focus.secondary {
-      background: #232336;
-      border-color: #fdfdfa;
-    }
+    ul a { display: block; padding: .5rem 0; }
 
-    ul a { padding: .5rem 0; display: block; }
+    /* Headings and lead-in text */
     h2, h3 { text-transform: uppercase; letter-spacing: .1em; }
     h2 + p, h3 + p { text-transform: uppercase; letter-spacing: .25em; font-weight: 700; }
     h3 + p { letter-spacing: .5em; }
-    h1 + p { text-transform: uppercase; letter-spacing: .5em; }
+    h1 { font-size: 1.2rem; letter-spacing: .1rem; }
+    h1 + p { font-size: 1rem; text-transform: uppercase; letter-spacing: .5em; }
     hgroup p:first-child { font-style: italic; }
-    hgroup:has(> h4) > p:first-child { font-style: normal; font-variant-numeric: lining-nums; }
+    hgroup p.date { font-style: normal; font-variant-numeric: lining-nums; }
 
+    .brand-list svg { display: inline-block; height: auto; max-width: 100%; }
 
-    .brand-list svg {
-      display: inline-block;
-      max-width: 100%;
-      height: auto;
-      max-inline-size: 100%;
-      block-size: auto;
-    }
-
-
-    .lead { text-transform: uppercase; letter-spacing: .1em; text-align: center; font-size: 2rem; line-height: 2rem; }
-    .lead span { text-transform: initial; display: block; margin: 1.75rem 0; font-size: 1rem; line-height: 1rem; }
-    .lead .caps { text-transform: uppercase; letter-spacing: .5em; font-weight: 700; }
+    .lead { text-align: center; font-size: 2rem; line-height: 2rem; text-transform: uppercase; letter-spacing: .1em; }
+    .lead span { display: block; margin: 1.75rem 0; font-size: 1rem; line-height: 1rem; text-transform: initial; }
+    .lead .caps { font-weight: 700; text-transform: uppercase; letter-spacing: .5em; }
     .lead .caps .italic { font-style: italic; font-weight: 400; }
     .lead .caps.tight { letter-spacing: .2em; }
     .lead p { margin: 0; }
 
-    .cta-list li { padding: .75rem 0; }
+    .main-nav { margin-bottom: 3rem; }
+
+    .cta-list li { padding: .75rem 0; text-align: center; }
+    .cta-list li a { padding: .75rem 0.5rem; }
 
     #intro hgroup, #intro ul { text-align: center; }
-    h1 { letter-spacing: .1rem; font-size: 1.2rem; }
-    h1 + p { font-size: 1rem; }
     li svg { padding: .25rem 0; }
 
     .copy p { margin: 0; hyphens: auto; text-indent: 2rem; orphans: 2; widows: 2; }
@@ -131,7 +102,7 @@
       <p>Product, web, & graphic designer
     </hgroup>
 
-    <ul>
+    <ul class="main-nav">
       <li><a href="https://gergozambo.com/#works">Works</a>
       <li><a href="https://gergozambo.com/#about">About</a>
       <li><a href="https://gergozambo.com/#contact">Contact</a>
@@ -164,7 +135,7 @@
     <ul class="cta-list">
       <li><a class="primary" href="https://gergozambo.com/#works">See my works</a>
       <li><a class="secondary" href="https://gergozambo.com/#about">Read about me</a>
-      <li><a href="https://gergozambo.com/docs/gergo-zambo-resume-2024-12-08.pdf" target="_blank" rel="noopener noreferrer">Download my resume ( <abbr>PDF</abbr>, 112 KB )</a>
+      <li><a href="https://gergozambo.com/docs/gergo-zambo-resume-2024-12-08.pdf" target="_blank" rel="noopener noreferrer">Download my resume ( <abbr>PDF</abbr>, 112 <abbr>KB</abbr> )</a>
     </ul>
 
   </header>
@@ -190,7 +161,7 @@
           <article>
             <img src="/img/bantu.avif" width=700 height=700 alt="Bantu financial mobile app screens">
             <hgroup>
-              <p>2024
+              <p class="date">2024
               <h4><a href="https://gergozambo.notion.site/Outings-without-financial-hassle-Bantu-mobile-app-20549d87503c801eb7d9e3f78a3bcc7c">Outings without a financial hassle</a></h4>
               <p>Designed a mobile social app streamlining shared expenses for young adults
             </hgroup>
@@ -199,7 +170,7 @@
 
           <article>
             <hgroup>
-              <p>2023
+              <p class="date">2023
               <h4><a href="https://gergozambo.notion.site/Conversations-in-uncertainty-Prefixbox-AI-agent-20549d87503c80b1902aefa52f7d888d">Conversations in uncertainty</a></h4>
             </hgroup>
             <p>Designed a white label e-commerce <abbr>AI</abbr> agent built with generative <abbr>AI</abbr> to engage customers & drive sales
@@ -207,7 +178,7 @@
 
           <article>
             <hgroup>
-              <p>2020
+              <p class="date">2020
               <h4><a href="https://gergozambo.notion.site/Building-communities-through-meta-design-Plan-Pal-web-app-20449d87503c8011bdf9c55dc5a3bab5">Building communities through meta design</a></h4>
             </hgroup>
             <p>Designed a desktop web app for landscape architects to facilitate participatory design and better insights
@@ -225,7 +196,7 @@
           <article>
             <img src="/img/graphisoft.avif" width=700 height=700 alt="Graphisoft brand identity">
             <hgroup>
-              <p>2019
+              <p class="date">2019
               <h4><a href="https://www.graphisoft.com/">Architectural innovation and community</a></h4>
               <p>Redesigned the website of a BIM software company with historical connections to Apple
             </hgroup>
@@ -234,7 +205,7 @@
 
           <article>
             <hgroup>
-              <p>2022
+              <p class="date">2022
               <h4><a href="https://www.deutschetelekomitsolutions.hu/en/homepage/">Deutsche Telekom <abbr>IT</abbr> Solutions</a></h4>
             </hgroup>
             <p>Redesigned the website of one of the top Hungarian <abbr>IT</abbr> companies to improve recruitment processes
@@ -242,7 +213,7 @@
 
           <article>
             <hgroup>
-              <p>2016
+              <p class="date">2016
               <h4><a href="https://drama.elte.hu/">Classic Hungarian plays</a></h4>
             </hgroup>
             <p>Developed an open-source website showcasing the typographic capabilities of web technology
@@ -260,7 +231,7 @@
           <article>
             <img src="/img/magba-2025.avif" width=700 height=700 alt="Hungarian Skateboarding Championship brand identity">
             <hgroup>
-              <p>2025
+              <p class="date">2025
               <h4><a href="https://www.figma.com/board/xN1Lhxetdpuz8H2PGNskwv/Skateboarding-Contest?node-id=0-1&t=QNRR9KbPVIbbJzCV-1/">Paving the road to the Olympics</a></h4>
               <p>Redesigned the campaign graphics of the longest-running skateboarding contest in Hungary
             </hgroup>
@@ -269,7 +240,7 @@
 
           <article>
             <hgroup>
-              <p>2024
+              <p class="date">2024
               <h4><a href="https://arthungry.com/zambo.gergo/11969/egyben_latni_a_nagy_egeszet_tanulmanyok_konecsni_gyoergy_munkassagarol_koenyvterv/">Seeing the whole picture</a></h4>
             </hgroup>
             <p>Designed a book about the life and art of György Konecsni, a Hungarian painter and graphic artist
@@ -277,7 +248,7 @@
 
           <article>
             <hgroup>
-              <p>2024
+              <p class="date">2024
               <h4><a href="https://www.instagram.com/edit_budapest/">Social media design kit for edit</a></h4>
             </hgroup>
             <p>Designed a social media kit to help the edit design collective increase the awareness of local design studios and design culture
@@ -295,7 +266,7 @@
 
           <article>
             <hgroup>
-              <p>2021
+              <p class="date">2021
               <h4>Posterfaiths</h4>
             </hgroup>
             <p>Short monograph about the posters and graphic design works of Károly Schmal, a contemporary Hungarian artist and graphic designer ( to be published )
@@ -304,24 +275,24 @@
 
           <article>
             <hgroup>
-              <p>2021
-              <h4><a href="https://gergozambo.com/docs/zambo-gergo-a-papp-csoport-kiallitasai.pdf" target="_blank" rel="noopener noreferrer">The exhibitions of the Papp Group ( <abbr>PDF</abbr>, 133 KB )</a></h4>
+              <p class="date">2021
+              <h4><a href="https://gergozambo.com/docs/zambo-gergo-a-papp-csoport-kiallitasai.pdf" target="_blank" rel="noopener noreferrer">The exhibitions of the Papp Group ( <abbr>PDF</abbr>, 133 <abbr>KB</abbr> )</a></h4>
             </hgroup>
             <p>Article about the twenty years of graphic design materials of the Papp Group’s exhibitions
           </article>
 
           <article>
             <hgroup>
-              <p>2021
-              <h4><a href="https://gergozambo.com/docs/zambo-gergo-szines-szurkeseg.pdf" target="_blank" rel="noopener noreferrer">Colorful grayness ( <abbr>PDF</abbr>, 131 KB )</a></h4>
+              <p class="date">2021
+              <h4><a href="https://gergozambo.com/docs/zambo-gergo-szines-szurkeseg.pdf" target="_blank" rel="noopener noreferrer">Colorful grayness ( <abbr>PDF</abbr>, 131 <abbr>KB</abbr> )</a></h4>
             </hgroup>
             <p>Article about the meaning of pop art in Hungarian poster design in the sixties and seventies
           </article>
 
           <article>
             <hgroup>
-              <p>2021
-              <h4><a href="https://gergozambo.com/docs/zambo-gergo-jancso-miklos-filmjeinek-plakatjai-a-rendszervaltasig.pdf" target="_blank" rel="noopener noreferrer">Poster shot ( <abbr>PDF</abbr>, 119 KB )</a></h4>
+              <p class="date">2021
+              <h4><a href="https://gergozambo.com/docs/zambo-gergo-jancso-miklos-filmjeinek-plakatjai-a-rendszervaltasig.pdf" target="_blank" rel="noopener noreferrer">Poster shot ( <abbr>PDF</abbr>, 119 <abbr>KB</abbr> )</a></h4>
             </hgroup>
             <p>Article about the movie posters of Miklós Jancsó up until 1989
           </article>
@@ -343,9 +314,9 @@
         <p>I believe that understanding the people, businesses, systems, and the historical context of design artifacts enables you to devise more varied solutions during design processes of all kinds.
         <p>When my time and energy allow, I design books, help institutions with communication and design problems, research Hungarian graphic design, and develop open-source literary websites to give back to my local community.
 
-        <ul>
-          <li><a href="https://gergozambo.com/docs/gergo-zambo-resume-2024-12-08.pdf" target="_blank" rel="noopener noreferrer">Download my resume ( <abbr>PDF</abbr>, 112 KB )</a>
-          <li><a href="https://gergozambo.com/#contact">Contact me</a>
+        <ul class="cta-list">
+          <li><a class="primary" href="https://gergozambo.com/docs/gergo-zambo-resume-2024-12-08.pdf" target="_blank" rel="noopener noreferrer">Download my resume ( <abbr>PDF</abbr>, 112 <abbr>KB</abbr> )</a>
+          <li><a class="secondary" href="https://gergozambo.com/#contact">Contact me</a>
           <li><a href="https://gergozambo.com/#works">See my works</a>
         </ul>
 
@@ -418,11 +389,11 @@
       <h3>Contact</h3>
       <p>Text me or follow my work
     </hgroup>
-    <p>Get in touch with me via email ( see my address in <a href="https://gergozambo.com/docs/gergo-zambo-resume-2024-12-08.pdf" target="_blank" rel="noopener noreferrer">my resume [ <abbr>PDF</abbr>, 112 KB ]</a> ) or <a href="https://www.linkedin.com/in/gergozambo/">LinkedIn</a>. Follow me on <a href="https://www.behance.net/zambogergo">Behance</a> or on <a href="https://fontsinuse.com/designers/21199/gergo-zambo">Fonts in Use</a>.
+    <p>Get in touch with me via email ( see my address in <a href="https://gergozambo.com/docs/gergo-zambo-resume-2024-12-08.pdf" target="_blank" rel="noopener noreferrer">my resume [ <abbr>PDF</abbr>, 112 <abbr>KB</abbr> ]</a> ) or <a href="https://www.linkedin.com/in/gergozambo/">LinkedIn</a>. Follow me on <a href="https://www.behance.net/zambogergo">Behance</a> or on <a href="https://fontsinuse.com/designers/21199/gergo-zambo">Fonts in Use</a>.
 
-    <ul>
-      <li><a href="https://gergozambo.com/docs/gergo-zambo-resume-2024-12-08.pdf" target="_blank" rel="noopener noreferrer">Download my resume ( <abbr>PDF</abbr>, 112 KB )</a>
-      <li><a href="https://gergozambo.com/#works">See my works</a>
+    <ul class="cta-list">
+      <li><a class="primary" href="https://gergozambo.com/docs/gergo-zambo-resume-2024-12-08.pdf" target="_blank" rel="noopener noreferrer">Download my resume ( <abbr>PDF</abbr>, 112 <abbr>KB</abbr> )</a>
+      <li><a class="secondary" href="https://gergozambo.com/#works">See my works</a>
       <li><a href="https://gergozambo.com/#about">Read about me</a>
       <li><a href="https://gergozambo.com/#intro">Back to top ↑</a>
     </ul>
