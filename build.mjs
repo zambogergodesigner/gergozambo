@@ -43,16 +43,39 @@ async function minifyHtmlFiles() {
     await fs.ensureDir(path.dirname(out));
     const html = await fs.readFile(src, 'utf8');
     const minified = await minifyHtml(html, {
+      // Whitespace and comments
       collapseWhitespace: true,
+      collapseInlineTagWhitespace: true,
+      conservativeCollapse: false,
       removeComments: true,
+      // Attributes
       removeRedundantAttributes: true,
       removeEmptyAttributes: true,
+      removeAttributeQuotes: true, // remove quotes when safe (single word, no spaces)
+      collapseBooleanAttributes: true,
+      // Tags and doctypes
       useShortDoctype: true,
-      minifyCSS: true,
-      minifyJS: true,
+      removeOptionalTags: true,
       keepClosingSlash: true,
+      // Strip legacy type attributes
+      removeScriptTypeAttributes: true,
+      removeStyleLinkTypeAttributes: true,
+      // Entity handling and ordering (tiny wins)
+      decodeEntities: true,
       sortAttributes: true,
       sortClassName: true,
+      // Inline CSS/JS minification – go aggressive
+      minifyCSS: { level: 2 },
+      minifyJS: {
+        mangle: true,
+        format: { comments: false },
+        compress: {
+          defaults: true,
+          passes: 2,
+          pure_getters: true,
+          unsafe: true,
+        },
+      },
     });
     await fs.writeFile(out, minified);
   }
