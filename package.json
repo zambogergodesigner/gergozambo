@@ -1,0 +1,31 @@
+{
+  "name": "gergozambo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "node -e \"(async()=>{await (await import('fs-extra')).remove('dist')})()\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zambogergodesigner/gergozambo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zambogergodesigner/gergozambo/issues"
+  },
+  "homepage": "https://github.com/zambogergodesigner/gergozambo#readme",
+  "devDependencies": {
+    "fs-extra": "^11.2.0",
+    "globby": "^14.0.1",
+    "html-minifier-terser": "^7.2.0"
+  }
+}
