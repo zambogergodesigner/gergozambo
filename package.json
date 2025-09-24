@@ -9,6 +9,8 @@
   },
   "scripts": {
     "build": "node build.mjs",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "node -e \"(async()=>{await (await import('fs-extra')).remove('dist')})()\""
   },
@@ -25,6 +27,7 @@
   "homepage": "https://github.com/zambogergodesigner/gergozambo#readme",
   "devDependencies": {
     "fs-extra": "^11.2.0",
+    "gh-pages": "^6.3.0",
     "globby": "^14.0.1",
     "html-minifier-terser": "^7.2.0"
   }
