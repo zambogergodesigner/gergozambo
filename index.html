@@ -9,10 +9,9 @@
   <link rel="apple-touch-icon" href="icon.png">
   <style>
 
-    ::-moz-selection { color: #09091b; background: #e4e4e7; text-shadow: none; }
     ::selection { color: #09091b; background: #e4e4e7; text-shadow: none; }
 
-    html { font-family: Georgia, serif; font-size: 1rem; line-height: 1.35; letter-spacing: .01rem; color: #fdfdfa; background: #09091b; font-kerning: normal; font-feature-settings: "kern"; text-rendering: optimizeLegibility; font-variant-ligatures: common-ligatures; }
+    html { font-family: Georgia, serif; font-size: 1rem; line-height: 1.35; letter-spacing: .01rem; color: #fdfdfa; background: #09091b; font-kerning: normal; font-feature-settings: "kern"; text-rendering: optimizeLegibility; font-variant-ligatures: common-ligatures; scroll-behavior: smooth; }
     body { margin: 0; padding: 0 1.3rem 0; }
     html, body { overflow-x: hidden; }
     h1, h2, h3, h4, h5 { font-weight: 400; }
@@ -36,9 +35,9 @@
 
 
     a { color: #fdfdfa; text-decoration: underline; text-decoration-skip-ink: auto; }
-    a:not(.primary):not(.secondary):visited,
-    a:not(.primary):not(.secondary):focus,
-    a:not(.primary):not(.secondary):hover { color: #9999A3; }
+    a:visited,
+    a:focus,
+    a:hover { color: #9999A3; }
     a,a:focus,a:hover{ transition: color .25s ease-out, background-color .25s ease-out, box-shadow .25s ease-out; }
 
     ul a { display: block; padding: .25rem 0; margin: .1rem 0; }
@@ -52,9 +51,11 @@
     }
     
     .primary { color: #09091b; background: #fdfdfa; border: 0; box-shadow: inset 0 0 0 2px transparent; }
+    .primary:visited { color: #09091b; }
     .primary:hover, .primary:focus { color: #09091b; background: #c9c9cf; box-shadow: inset 0 0 0 2px #c9c9cf; }
 
     .secondary { color: #fdfdfa; background: #09091b; border: 2px solid currentColor; }
+    .secondary:visited { color: #fdfdfa; }
     .secondary:hover, .secondary:focus { color: #fdfdfa; background: #363653; border-color: #fdfdfa; }
 
     .main-nav { margin-bottom: 3rem; font-size: 1.25rem; }
@@ -85,6 +86,12 @@
     #about h4 { margin-top: 3rem; }
     #works .heading:first-child, #about .heading:first-child { margin-top: 6rem; }
 
+    #works .heading.anchor, #about .heading.anchor, #contact .heading.anchor { margin-top: 0; }
+    #works, #about { padding-top: 6rem; }
+    #contact { padding-top: 3rem; }
+    #intro hgroup { margin-top: 0; }
+    #intro { padding-top: 3rem; }
+
     .body-copy { margin: 0; hyphens: auto; text-indent: 2rem; orphans: 2; widows: 2; }
     .body-copy.no-indent { text-indent: 0; }
     .body-copy.no-indent::first-line { text-transform: uppercase; letter-spacing: .1em; }
@@ -95,6 +102,9 @@
     .lead .caps .italic { font-style: italic; font-weight: 400; }
     .lead .caps.tight { letter-spacing: .2em; }
     .lead p { margin: 0; }
+    .tight { letter-spacing: .01rem; }
+    .caps.italic { margin-top: 0; }
+    .italic { font-style: italic; }
 
 
 
@@ -139,9 +149,9 @@
     </picture>
     <div class="lead">
       <p>I design<br> apps, websites,<br> & graphics.
-      <p><span class="caps">I believe in</span> inclusive,<br> sustainable,<br> & fast <span><em>digital products</em> and <em>websites</em>, and</span> meaningful<br> images &<br> identities.
+      <p><span class="caps">I believe in</span> inclusive,<br> sustainable,<br> & fast <span class="tight"><em>digital products</em> and <em>websites</em>, and</span> meaningful<br> images &<br> identities.
       <p><span class="caps tight">I help businesses and cultural institutions <span class="caps italic">reach valuable outcomes through</span></span> co-creation<br> & design<br> processes.
-      <p><span>I have worked with some of the <em>largest brands</em> on <em>impactful projects</em>.</span>
+      <p><span class="tight">I have worked with some of the <em>largest brands</em> on <em>impactful projects</em>.</span>
     </div>
 
     <ul class="brand-list">
@@ -175,7 +185,7 @@
 
     <section id="works">
 
-      <hgroup class="heading">
+      <hgroup class="heading anchor">
         <p>Highlighted
         <h2>Works</h2>
         <p>In product, web, and graphic design
@@ -288,7 +298,7 @@
           <article>
             <hgroup class="subheading">
               <p class="date">2024
-              <h4><a href="https://www.instagram.com/edit_budapest/">Social media design kit for edit</a></h4>
+              <h4><a href="https://www.instagram.com/edit_budapest/">Social media design kit for ed<span class="italic">i</span>t</a></h4>
             </hgroup>
             <p>Designed a social media kit to help the edit design collective increase the awareness of local design studios and design culture
           </article>
@@ -342,10 +352,10 @@
 
     <section id="about">
 
-      <hgroup class="heading">
+      <hgroup class="heading anchor">
         <p>Briefly
         <h2>About</h2>
-        <p>Me, this website, and my design community
+        <p>Me and this website
       </hgroup>
 
       <p class="body-copy no-indent">I am a product, web, and graphic designer leading projects and teams through design processes to create business value and solve problems.
@@ -361,6 +371,40 @@
         <li><a href="https://gergozambo.com/#works">See my works</a>
       </ul>
 
+
+
+      <hgroup class="heading">
+        <h3>Design influences</h3>
+        <p>Studios and designers who influenced my work
+      </hgroup>
+
+      <p class="body-copy no-indent">These companies and designers influenced what I do and helped me create better designs. This very incomplete list is a tribute to them. If you think you should be listed here, thank you as well. You are in my thoughts and heart.
+
+      <ul>
+        <li><a href="https://stuffandnonsense.co.uk/">Andy Clarke</a>
+        <li><a href="https://atlasrise.io/">Atlas, Rise!</a>
+        <li><a href="https://www.cinketype.com/">Cinketype</a>
+        <li><a href="https://www.forthehearts.net/">Claus Eggers Sørensen</a>
+        <li><a href="https://chriscoyier.net/">Chris Coyier</a>
+        <li><a href="https://www.instagram.com/fontovitz/">fontovitz</a>
+        <li><a href="https://font.hu/">font.hu</a>
+        <li><a href="https://hungarumlaut.com/">Hungarumlaut</a>
+        <li><a href="https://huertatipografica.com/en">Huerta Tipográfica</a>
+        <li><a href="https://jasonsantamaria.com/">Jason Santa Maria</a>
+        <li><a href="https://zeldman.com/">Jeffrey Zeldman</a>
+        <li><a href="https://jessicahische.is/">Jessica Hische</a>
+        <li><a href="https://luc.devroye.org/fonts-26320.html">Matthew Carter</a>
+        <li><a href="https://www.untold-stories.net/">Ruben Pater</a>
+        <li><a href="https://www.submachine.co/">SUBMACHINE</a>
+        <li><a href="https://velvetyne.fr/">Velvetyne</a>
+        <li><a href="https://ergomania.eu/">Ergomania</a>
+        <li><a href="https://exaltinteractive.com/">Exalt Interactive</a>
+        <li><a href="https://integralvision.eu/en">Integral Vision</a>
+        <li><a href="https://msktrs.com/">Musketeers</a>
+      </ul>
+
+
+      
       <hgroup class="heading">
         <h3>Website info</h3>
         <p>Manifesto, history, and design decisions
@@ -392,43 +436,13 @@
         <li><a href="https://gergozambo.com/website-archive/v-1-5.html">Version 1.5 ( 2022 – 2025 )</a>
       </ul>
 
-      <hgroup class="heading">
-        <h3>Design community</h3>
-        <p>Studios and designers who influenced me
-      </hgroup>
-
-      <p class="body-copy no-indent">These companies and designers are close to my heart. They influenced what I do or helped me create better designs by providing feedback, guidance, or premium fonts. This very incomplete list is a tribute to them. If you think you should be listed here, thank you as well. You are in my thoughts and heart.
-
-      <ul>
-        <li><a href="https://stuffandnonsense.co.uk/">Andy Clarke</a>
-        <li><a href="https://atlasrise.io/">Atlas, Rise!</a>
-        <li><a href="https://www.cinketype.com/">Cinketype</a>
-        <li><a href="https://www.forthehearts.net/">Claus Eggers Sørensen</a>
-        <li><a href="https://chriscoyier.net/">Chris Coyier</a>
-        <li><a href="https://www.instagram.com/fontovitz/">fontovitz</a>
-        <li><a href="https://font.hu/">font.hu</a>
-        <li><a href="https://hungarumlaut.com/">Hungarumlaut</a>
-        <li><a href="https://huertatipografica.com/en">Huerta Tipográfica</a>
-        <li><a href="https://jasonsantamaria.com/">Jason Santa Maria</a>
-        <li><a href="https://zeldman.com/">Jeffrey Zeldman</a>
-        <li><a href="https://jessicahische.is/">Jessica Hische</a>
-        <li><a href="https://luc.devroye.org/fonts-26320.html">Matthew Carter</a>
-        <li><a href="https://www.untold-stories.net/">Ruben Pater</a>
-        <li><a href="https://www.submachine.co/">SUBMACHINE</a>
-        <li><a href="https://velvetyne.fr/">Velvetyne</a>
-        <li><a href="https://ergomania.eu/">Ergomania</a>
-        <li><a href="https://exaltinteractive.com/">Exalt Interactive</a>
-        <li><a href="https://integralvision.eu/en">Integral Vision</a>
-        <li><a href="https://msktrs.com/">Musketeers</a>
-      </ul>
-
     </section>
 
   </main>
 
   <footer id="contact">
 
-    <hgroup class="heading">
+    <hgroup class="heading anchor">
       <h3>Contact</h3>
       <p>Text me or follow my work
     </hgroup>
