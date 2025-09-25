@@ -7,11 +7,21 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.png">
+
+
+
+
+
+
+
+
+
+
   <style>
 
     ::selection { color: #09091b; background: #e4e4e7; text-shadow: none; }
 
-    html { font-family: Georgia, serif; font-size: 1rem; line-height: 1.35; letter-spacing: .01rem; color: #fdfdfa; background: #09091b; font-kerning: normal; font-feature-settings: "kern"; text-rendering: optimizeLegibility; font-variant-ligatures: common-ligatures; scroll-behavior: smooth; }
+    html { font-family: Georgia, serif; font-size: clamp(1rem, 0.95rem + 0.5vw, 1.125rem); line-height: 1.35; letter-spacing: .01rem; color: #fdfdfa; background: #09091b; font-kerning: normal; font-feature-settings: "kern"; text-rendering: optimizeLegibility; font-variant-ligatures: common-ligatures; scroll-behavior: smooth; }
     body { margin: 0; padding: 0 1.3rem 0; }
     html, body { overflow-x: hidden; }
     h1, h2, h3, h4, h5 { font-weight: 400; }
@@ -59,30 +69,41 @@
     .secondary:visited { color: #fdfdfa; }
     .secondary:hover, .secondary:focus { color: #fdfdfa; background: #363653; border-color: #fdfdfa; }
 
-    .main-nav { margin-bottom: 3rem; font-size: 1.25rem; }
+
+
+
+
+    .main-nav { margin: -1rem 0 4rem; font-size: 1.1rem; }
+
+    @media (min-width: 48rem) {
+      .main-nav { display: flex; justify-content: center; gap: 1.5rem; margin-left: 1rem; }
+      .main-nav li a { padding: .5rem 2rem; }
+    }
+
     .cta-list li { padding: .75rem 0; text-align: center; }
     .cta-list li a { padding: .75rem 0.5rem; }
+    picture + .body-copy { margin-top: 3rem;  }
 
 
 
 
 
-    h1 { font-size: 1.4rem; letter-spacing: .1rem; }
-    h2 { font-size: 4rem; margin: 0; }
-    h3 { font-size: 2rem; margin: .75rem 0; }
-    h4 { font-size: 1.75rem; margin: .25rem 0 .75rem; }
+    h1 { font-size: clamp(1.4rem, 0.95rem + 1.5vw, 2.5rem); letter-spacing: .1rem; margin-bottom: .25rem; }
+    h2 { font-size: clamp(3.75rem, 1.25rem + 13.75vw, 20rem); margin: 0; line-height: 1; }
+    h3 { font-size: clamp(2rem, 1rem + 6.5vw, 9rem); margin: 0; line-height: 1; }
+    h4 { font-size: clamp(1.25rem, 0.75rem + 1.1vw, 1.75rem); margin: .25rem 0 .75rem; }
 
-    h1 + p { font-size: 1.25rem; text-transform: uppercase; letter-spacing: .25em; margin-top: 0; }
-    h2, h3 { text-transform: uppercase; letter-spacing: .1em; }
+    h1 + p { font-size: clamp(1.25rem, 0.95rem + 1.5vw, 2.5rem); text-transform: uppercase; letter-spacing: .25em; margin-top: 0; }
+    h2, h3 { text-transform: uppercase; letter-spacing: .15em; }
     h2 + p, h3 + p { text-transform: uppercase; letter-spacing: .25em; font-weight: 700; }
-    h3 + p { letter-spacing: .5em; }
+    .heading h3 + p { font-size: clamp(1.15rem, 0.95rem + 1.15vw, 1.35rem); letter-spacing: .5em; margin: .75rem; font-weight: 400; }
 
     hgroup p:first-child { font-style: italic; }
     .num, hgroup p.date { font-style: normal; font-variant-numeric: lining-nums; }
     #intro hgroup, #intro ul { text-align: center; }
 
     .heading { text-align: center; margin-bottom: 2rem; }
-    .heading p { margin: 0; }
+    .heading p { font-size: clamp(1.15rem, 0.95rem + 1.25vw, 2rem); margin: 0; }
     .subheading h4 { font-size: 1.25rem; margin: -.5rem 0 .75rem; }
     #about h4 { margin-top: 3rem; }
     #works .heading:first-child, #about .heading:first-child { margin-top: 6rem; }
@@ -121,6 +142,15 @@
 
   </style>
 
+
+
+
+
+
+
+
+
+
   <title>Gergő Zámbó | Product, web, & graphic designer, graphic design writer and speaker</title>
   <meta content="I am a product, web, and graphic designer leading projects and teams through design processes. I believe in inclusive, fast-loading, and sustainable apps and websites that solve problems." name="description">
 
@@ -144,10 +174,6 @@
       <li><a href="https://gergozambo.com/#contact">Contact</a>
     </ul>
 
-    <picture>
-      <source srcset="/img/gergo-zambo-designer-portrait.avif" type="image/avif">
-      <img src="/img/gergo-zambo-designer-portrait.jpg" width=700 height=700 alt="Portrait of Gergő Zámbó">
-    </picture>
     <div class="lead">
       <p>I design<br> apps, websites,<br> & graphics.
       <p><span class="caps">I believe in</span> inclusive,<br> sustainable,<br> & fast <span class="tight"><em>digital products</em> and <em>websites</em>, and</span> meaningful<br> images &<br> identities.
@@ -328,7 +354,7 @@
               <p class="date">2021
               <h4><a href="https://gergozambo.com/docs/zambo-gergo-a-papp-csoport-kiallitasai.pdf" target="_blank" rel="noopener noreferrer">The exhibitions of the Papp Group ( <abbr>PDF</abbr>, <span class="num">133</span> <abbr>KB</abbr> )</a></h4>
             </hgroup>
-            <p>Article about the twenty years of graphic design materials of the Papp Group’s exhibitions
+            <p>Article about the twenty years of graphic design materials of the Papp Group's exhibitions
           </article>
 
           <article>
@@ -358,6 +384,11 @@
         <h2>About</h2>
         <p>Me and this website
       </hgroup>
+
+      <picture>
+        <source srcset="/img/gergo-zambo-designer-portrait.avif" type="image/avif">
+        <img src="/img/gergo-zambo-designer-portrait.jpg" width=700 height=700 alt="Portrait of Gergő Zámbó">
+      </picture>
 
       <p class="body-copy no-indent">I am a product, web, and graphic designer leading projects and teams through design processes to create business value and solve problems.
       <p class="body-copy">With over ten years of experience, I have collaborated on high-impact, large projects for some of the most famous companies.
@@ -411,17 +442,17 @@
         <p>Manifesto, design decisions, and site history
       </hgroup>
 
-      <p class="body-copy no-indent">If you wonder why my website looks like a title page from the 18th century, it is because this was my goal. It might look utterly boring to today’s standards, but playing around with the rich typographical heritage of book design in a digital medium was what got me interested.
+      <p class="body-copy no-indent">If you wonder why my website looks like a title page from the 18th century, it is because this was my goal. It might look utterly boring to today's standards, but playing around with the rich typographical heritage of book design in a digital medium was what got me interested.
       <p class="body-copy">It draws inspiration from sustainable web design with a love for transitional Scotch typefaces. I started with the self-imposed design constraint to use only Georgia. It is sustainable and one of the best fonts ever made for screens.
       <p class="body-copy">The source code of this website is substantially less than the current average page size reference. It uses mobile-first <abbr title="cascading style sheets">CSS</abbr> and responsive typography techniques. It validates ﬂawlessly and is accessible to a wide range of users.
 
       <dl>
-        <dt>What’s with all the ampersands?</dt>
+        <dt>What's with all the ampersands?</dt>
         <dd>I have used ampersands at more places than some might find healthy. I have used these to make the headings more compact. Contrary to common knowledge, conjunctions are allowed at the beginning and the end of lines in titles. This typographic debate is still ongoing and undecided. After much reading, I took the liberty of using them at both the beginning and at the end of lines.</dd>
       </dl>
 
       <dl>
-        <dt>Why don’t you have a light mode?</dt>
+        <dt>Why don't you have a light mode?</dt>
         <dd>Light mode helps legibility in bright environments. However, I wanted to keep the code as lightweight as possible, and a dark background uses less energy. For this reason, I opted out of a theme switcher to be more sustainable and a bit less accessible.</dd>
       </dl>
 
