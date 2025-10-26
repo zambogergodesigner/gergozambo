@@ -75,11 +75,6 @@
 
     .main-nav { margin: -1rem 0 4rem; font-size: 1.1rem; }
 
-    @media (min-width: 48rem) {
-      .main-nav { display: flex; justify-content: center; gap: 1.5rem; margin-left: 1rem; }
-      .main-nav li a { padding: .5rem 2rem; }
-    }
-
     .cta-list li { padding: .75rem 0; text-align: center; }
     .cta-list li a { padding: .75rem 0.5rem; }
     picture + .body-copy { margin-top: 3rem;  }
@@ -120,27 +115,55 @@
 
     .lead { text-align: center; line-height: 1; text-transform: uppercase; letter-spacing: .1em; margin-top: 2rem; }
     .lead span { display: block; margin: 1.5rem 0; font-size: clamp(1rem, 0.75rem + 1.25vw, 1.65rem); line-height: 1.35; text-transform: initial; }
-    @media (min-width: 48rem) {
-      .lead span { margin: 2.5rem 0; }
-    }
-    .lead .caps { font-weight: 700; text-transform: uppercase; letter-spacing: .5em; }
+
+
+    .lead .caps { font-size: clamp(0.75rem, 0.75rem + 1.15vw, 1.35rem); font-weight: 700; text-transform: uppercase; letter-spacing: .5em; }
     .lead .caps .italic { font-style: italic; font-weight: 400; }
     .lead .caps.tight { letter-spacing: .2em; }
+
     .lead p { margin: 0; font-size: clamp(2rem, 0.75rem + 6.5vw, 8rem); }
     .tight { letter-spacing: .01rem; }
     .caps.italic { margin-top: 0; }
     .italic { font-style: italic; }
-
-
-
 
     svg { display: inline-block; height: auto; max-width: 100%; }
     li svg { padding: .25rem 0; }
     .brand-list svg { display: inline-block; height: auto; max-width: 100%; transform: scale(0.75); }
     .brand-list li { padding: 0; }
 
+
+
+
+
     .letter-g { display:block; width:151vw; max-width:none; height:auto; margin:0 auto; position: relative; left:50%; transform: translateX(-45%); transform-origin: center; clip-path: inset(0); }
     .letter-g.bottom { transform: translateX(-70%); margin: 0; }
+
+
+
+
+
+    @media (min-width: 26em) {
+      .brand-list svg { transform: scale(0.9); }
+      .brand-list li { padding-bottom: 1rem; }
+    }
+
+    @media (min-width: 33em) {
+      .brand-list { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.5rem; margin: 2rem 1rem; }
+      .brand-list li { padding-bottom: 0; }
+    }
+
+    @media (min-width: 48em) {
+      .main-nav { display: flex; justify-content: center; gap: 1.5rem; margin-left: 1rem; }
+      .main-nav li a { padding: .5rem 2rem; }
+      .lead span { margin: 2.5rem 0; }
+      .caps.tight { margin: 2.5rem 8rem; }
+      .brand-list { gap: 1rem 3rem; margin: 2rem 4rem; }
+    }
+
+    @media (min-width: 64em) {
+      .brand-list { gap: 2rem 3.5rem; margin: 3.5rem 9rem; }
+      .brand-list svg { transform: scale(1); }
+    }
 
   </style>
 
