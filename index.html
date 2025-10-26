@@ -89,8 +89,8 @@
 
 
     h1 { font-size: clamp(1.4rem, 0.95rem + 1.5vw, 2.5rem); letter-spacing: .1rem; margin-bottom: .25rem; }
-    h2 { font-size: clamp(3.75rem, 1.25rem + 13.75vw, 20rem); margin: 0; line-height: 1; }
-    h3 { font-size: clamp(2rem, 1rem + 6.5vw, 9rem); margin: 0; line-height: 1; }
+    h2 { font-size: clamp(3.75rem, 1.25rem + 13.75vw, 18rem); margin: 0; line-height: 1; }
+    h3 { font-size: clamp(2rem, 1rem + 6.5vw, 8rem); margin: 0; line-height: 1; }
     h4 { font-size: clamp(1.25rem, 0.75rem + 1.1vw, 1.75rem); margin: .25rem 0 .75rem; }
 
     h1 + p { font-size: clamp(1.25rem, 0.95rem + 1.5vw, 2.5rem); text-transform: uppercase; letter-spacing: .25em; margin-top: 0; }
@@ -118,16 +118,18 @@
     .body-copy.no-indent { text-indent: 0; }
     .body-copy.no-indent::first-line { text-transform: uppercase; letter-spacing: .1em; }
 
-    .lead { text-align: center; font-size: 2rem; line-height: 2rem; text-transform: uppercase; letter-spacing: .1em; margin-top: 2rem; }
-    .lead span { display: block; margin: 1.75rem 0; font-size: 1rem; line-height: 1rem; text-transform: initial; }
+    .lead { text-align: center; line-height: 1; text-transform: uppercase; letter-spacing: .1em; margin-top: 2rem; }
+    .lead span { display: block; margin: 1.5rem 0; font-size: clamp(1rem, 0.75rem + 1.25vw, 1.65rem); line-height: 1.35; text-transform: initial; }
+    @media (min-width: 48rem) {
+      .lead span { margin: 2.5rem 0; }
+    }
     .lead .caps { font-weight: 700; text-transform: uppercase; letter-spacing: .5em; }
     .lead .caps .italic { font-style: italic; font-weight: 400; }
     .lead .caps.tight { letter-spacing: .2em; }
-    .lead p { margin: 0; }
+    .lead p { margin: 0; font-size: clamp(2rem, 0.75rem + 6.5vw, 8rem); }
     .tight { letter-spacing: .01rem; }
     .caps.italic { margin-top: 0; }
     .italic { font-style: italic; }
-
 
 
 
