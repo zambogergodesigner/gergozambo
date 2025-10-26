@@ -21,16 +21,17 @@
 
     ::selection { color: #09091b; background: #e4e4e7; text-shadow: none; }
 
-    html { font-family: Georgia, serif; font-size: clamp(1rem, 0.95rem + 0.5vw, 1.125rem); line-height: 1.35; letter-spacing: .01rem; color: #fdfdfa; background: #09091b; font-kerning: normal; font-feature-settings: "kern"; text-rendering: optimizeLegibility; font-variant-ligatures: common-ligatures; scroll-behavior: smooth; }
+    html { font-family: Georgia, serif; font-size: clamp(1rem, 0.95rem + 0.5vw, 1.25rem); line-height: 1.35; letter-spacing: .01rem; color: #fdfdfa; background: #09091b; font-kerning: normal; font-feature-settings: "kern"; text-rendering: optimizeLegibility; font-variant-ligatures: common-ligatures; scroll-behavior: smooth; }
     body { margin: 0; padding: 0 1.3rem 0; }
     html, body { overflow-x: hidden; }
     h1, h2, h3, h4, h5 { font-weight: 400; }
     abbr { font-variant: small-caps; letter-spacing: 0.05rem; text-transform: lowercase; text-decoration: none; }
 
-    ul { font-family: 'Courier New', Courier, monospace; list-style-type: none; padding: .5rem 0; letter-spacing: 0; }
+    ul, dd > a, .version-list > dd { font-family: 'Courier New', Courier, monospace; list-style-type: none; padding: .5rem 0; letter-spacing: 0; }
     li { padding: .25rem 0; }
     hgroup { margin-top: 3rem; }
-    dt { font-size: 1.2rem; margin: 2.5rem 0 1rem; }
+    dl { max-width: 1024px; margin: 2rem auto 0; }
+    dt { font-size: clamp(1.15rem, 0.95rem + 1.4vw, 2rem); margin: 2.5rem 0 1rem; line-height: 1.1; }
     dd { margin: 0; }
 
     img {
@@ -87,7 +88,7 @@
     h1 { font-size: clamp(1.4rem, 0.95rem + 1.5vw, 2.5rem); letter-spacing: .1rem; margin-bottom: .25rem; }
     h2 { font-size: clamp(3.75rem, 1.25rem + 13.75vw, 18rem); margin: 0; line-height: 1; }
     h3 { font-size: clamp(2rem, 1rem + 6.5vw, 8rem); margin: 0; line-height: 1; }
-    h4 { font-size: clamp(1.25rem, 0.75rem + 1.1vw, 1.75rem); margin: .25rem 0 .75rem; }
+    h4 { font-size: clamp(2rem, 1rem + 5.5vw, 5.5rem); margin: .25rem 0 .75rem; line-height: 1.1; }
 
     h1 + p { font-size: clamp(1.25rem, 0.95rem + 1.5vw, 2.5rem); text-transform: uppercase; letter-spacing: .25em; margin-top: 0; }
     h2, h3 { text-transform: uppercase; letter-spacing: .15em; }
@@ -99,8 +100,9 @@
     #intro hgroup, #intro ul { text-align: center; }
 
     .heading { text-align: center; margin-bottom: 2rem; }
-    .heading p { font-size: clamp(1.15rem, 0.95rem + 1.25vw, 2rem); margin: 0; }
-    .subheading h4 { font-size: 1.25rem; margin: -.5rem 0 .75rem; }
+    .heading p { font-size: clamp(1.15rem, 0.95rem + 1.4vw, 2rem); margin: 0; }
+    .subheading h4 { font-size: clamp(1.25rem, 0.95rem + 2.5vw, 2.25rem); margin: -.5rem 0 .75rem; }
+    .subheading .date { font-size: clamp(1.15rem, 0.95rem + 1.2vw, 1.5rem); margin: -.5rem 0 .75rem; }
     #about h4 { margin-top: 3rem; }
     #works .heading:first-child, #about .heading:first-child { margin-top: 6rem; }
 
@@ -132,11 +134,13 @@
     .brand-list svg { display: inline-block; height: auto; max-width: 100%; transform: scale(0.75); }
     .brand-list li { padding: 0; }
 
+    #about .intro-text { margin: 3rem auto; }
 
 
 
 
-    .letter-g { display:block; width:151vw; max-width:none; height:auto; margin:0 auto; position: relative; left:50%; transform: translateX(-45%); transform-origin: center; clip-path: inset(0); }
+
+    .letter-g { display: block; width: 151vw; max-width: none; height: auto; margin: 0 auto; position: relative; left: 50%; transform: translateX(-45%); transform-origin: center; clip-path: inset(0); }
     .letter-g.bottom { transform: translateX(-70%); margin: 0; }
 
 
@@ -146,6 +150,7 @@
     @media (min-width: 26em) {
       .brand-list svg { transform: scale(0.9); }
       .brand-list li { padding-bottom: 1rem; }
+      img { margin-top: 2rem; max-width: 75%; }
     }
 
     @media (min-width: 33em) {
@@ -154,9 +159,13 @@
       .cta-list li { display: inline-block; margin: 0 1rem; }
       .cta-list li a { padding: .75rem 2rem; }
       .cta-list li a.tertiary { padding: .75rem 0.5rem; }
+      h4 a { text-decoration-thickness: 0.1rem; text-underline-offset: 0.3rem; }
+      #contact .heading p a { text-decoration-thickness: 0.1rem; text-underline-offset: 0.2rem; }
     }
     @media (min-width: 42em) {
       .brand-list { margin: 0 2.25rem; }
+      .designer-list { column-count: 2; gap: 1.5rem; max-width: 1024px; margin: 2rem auto; }
+      .version-list dd { display: inline; padding-right: 2rem; }
     }
 
     @media (min-width: 48em) {
@@ -164,19 +173,42 @@
       .main-nav li a { padding: .5rem 2rem; }
       .lead span { margin: 2.5rem 0; }
       .caps.tight { margin: 2.5rem 8rem; }
-
       .brand-list { margin: 2.5rem 2.5rem 1.5rem; }
-      .intro-text { column-count: 2; orphans: 2; widows: 3; gap: 1.5rem; max-width: 1280px; margin: 0 auto; }
+      .intro-text { column-count: 2; orphans: 2; widows: 3; gap: 1.5rem; max-width: 1440px; margin: 0 auto; }
+      img { margin-top: 4rem; }
+      .heading { margin-left: auto; margin-right: auto; }
+      article .heading { max-width: 80%; }
+      .heading + p { margin: 3rem auto 0; column-count: 2; orphans: 2; widows: 3; gap: 1.5rem; max-width: 1024px; }
+      .subentry { max-width: 1024px; margin: 0 auto; }
+      #about .heading + .intro-text { column-count: 2; gap: 1.5rem; max-width: 1024px; }
+      dd { column-count: 2; gap: 1.5rem; }
+
     }
 
     @media (min-width: 64em) {
       .brand-list li { padding-bottom: 1.5rem; padding-right: 3.5rem; }
+      #works .heading:first-child { margin-top: 9rem; }
+      #about .heading:first-child { margin-top: 4rem; }
       .brand-list svg { transform: scale(1); }
+      #about .heading, #contact { margin-top: 8rem; }
+      .designer-list { column-count: 4; gap: 2rem; }
+      dl { margin: 4rem auto 0; }
     }
 
     @media (min-width: 80em) {
       .intro-text { column-count: 3; gap: 2rem; }
+      article .heading { max-width: 60%; }
+      #contact .heading p { max-width: 900px; margin: 0 auto; }
     }
+
+    @media (min-width: 90em) {
+      article .heading { max-width: 55%; }
+    }
+
+    @media (min-width: 110em) {
+      article .heading { max-width: 50%; }
+    }
+
 
   </style>
 
@@ -272,13 +304,13 @@
            </picture>
             <hgroup class="heading">
               <p class="date">2024
-              <h4><a href="https://gergozambo.notion.site/Outings-without-financial-hassle-Bantu-mobile-app-20549d87503c801eb7d9e3f78a3bcc7c">Outings without a financial hassle</a></h4>
+              <h4><a href="https://gergozambo.notion.site/Outings-without-financial-hassle-Bantu-mobile-app-20549d87503c801eb7d9e3f78a3bcc7c">Outings without a&nbsp;financial hassle</a></h4>
               <p>Designed a mobile social app streamlining shared expenses for young adults
             </hgroup>
             <p class="body-copy no-indent">Bantu is a British financial social app that focuses on social interactions for young adults to handle expenses more easily at outings and group planning. The challenge was to redesign the information architecture based on the product vision in a way that is still familiar to financial app users. We used generative <abbr>AI</abbr> for branding and deviated from the all-too-common minimalist <abbr>UI</abbr> and brand design direction to appeal to our target audience.
           </article>
 
-          <article>
+          <article class="subentry">
             <hgroup class="subheading">
               <p class="date">2023
               <h4><a href="https://gergozambo.notion.site/Conversations-in-uncertainty-Prefixbox-AI-agent-20549d87503c80b1902aefa52f7d888d">Conversations in uncertainty</a></h4>
@@ -286,7 +318,7 @@
             <p>Designed a white label e-commerce <abbr>AI</abbr> agent built with generative <abbr>AI</abbr> to engage customers & drive sales
           </article>
 
-          <article>
+          <article class="subentry">
             <hgroup class="subheading">
               <p class="date">2020
               <h4><a href="https://gergozambo.notion.site/Building-communities-through-meta-design-Plan-Pal-web-app-20449d87503c8011bdf9c55dc5a3bab5">Building communities through meta design</a></h4>
@@ -316,7 +348,7 @@
             <p class="body-copy no-indent">Graphisoft is an international software company for architecture. The challenge was to redesign the brand and the website to communicate new business values: community and innovation. We used portraits instead of renders and buildings, along with cutting-edge web technologies. I have been involved in the <abbr>UX</abbr> workshops, designed the foundations of the design system, and collaborated with developers on magazine-like page layouts.
           </article>
 
-          <article>
+          <article class="subentry">
             <hgroup class="subheading">
               <p class="date">2022
               <h4><a href="https://www.deutschetelekomitsolutions.hu/en/homepage/">Deutsche Telekom <abbr>IT</abbr> Solutions</a></h4>
@@ -324,7 +356,7 @@
             <p>Redesigned the website of one of the top Hungarian <abbr>IT</abbr> companies to improve recruitment processes
           </article>
 
-          <article>
+          <article class="subentry">
             <hgroup class="subheading">
               <p class="date">2016
               <h4><a href="https://drama.elte.hu/">Classic Hungarian plays</a></h4>
@@ -354,7 +386,7 @@
             <p class="body-copy no-indent">The Hungarian Skateboarding Championship is the longest-running skateboarding contest series in Hungary. The challenge was to redesign the campaign promotion materials so that institutions and skaters of all kinds can relate to its newfound identity. I have led the entire design process from initial research and workshops to the final design deliverables.
           </article>
 
-          <article>
+          <article class="subentry">
             <hgroup class="subheading">
               <p class="date">2024
               <h4><a href="https://arthungry.com/zambo.gergo/11969/egyben_latni_a_nagy_egeszet_tanulmanyok_konecsni_gyoergy_munkassagarol_koenyvterv/">Seeing the whole picture</a></h4>
@@ -362,7 +394,7 @@
             <p>Designed a book about the life and art of György Konecsni, a Hungarian painter and graphic artist
           </article>
 
-          <article>
+          <article class="subentry">
             <hgroup class="subheading">
               <p class="date">2024
               <h4><a href="https://www.instagram.com/edit_budapest/">Social media design kit for ed<span class="italic">i</span>t</a></h4>
@@ -378,10 +410,9 @@
           <h3>Writings</h3>
           <p>On graphic design history
         </hgroup>
-        <p class="body-copy no-indent">My main area of research is poster design in the latter half of Hungarian socialism. I have written multiple scholarly articles and a short monograph on this topic. 
-        <p class="body-copy">These scholarly articles, unfortunately, are only available in Hungarian. I recommend using <a href="https://www.deepl.com/en/translator">DeepL</a>, <a href="https://chatgpt.com/">ChatGPT</a>, or any GenAI for a summary or a quick translation.
+        <p class="body-copy no-indent">My main area of research is poster design in the latter half of Hungarian socialism. I have written multiple scholarly articles and a short monograph on this topic. These scholarly articles, unfortunately, are only available in Hungarian. I recommend using <a href="https://www.deepl.com/en/translator">DeepL</a>, <a href="https://chatgpt.com/">ChatGPT</a>, or any GenAI for a summary or a quick translation.
 
-          <article>
+          <article class="subentry">
             <hgroup class="subheading">
               <p class="date">2021
               <h4>Posterfaiths ( to be published )</h4>
@@ -389,15 +420,15 @@
             <p>Short monograph about the posters and graphic design works of Károly Schmal, a contemporary Hungarian artist and graphic designer 
           </article>
 
-          <article>
+          <article class="subentry">
             <hgroup class="subheading">
               <p class="date">2021
-              <h4><a href="https://gergozambo.com/docs/zambo-gergo-a-papp-csoport-kiallitasai.pdf" target="_blank" rel="noopener noreferrer">The exhibitions of the Papp Group ( <abbr>PDF</abbr>, <span class="num">133</span> <abbr>KB</abbr> )</a></h4>
+              <h4><a href="https://gergozambo.com/docs/zambo-gergo-a-papp-csoport-kiallitasai.pdf" target="_blank" rel="noopener noreferrer">The exhibitions of the Papp Group&nbsp;( <abbr>PDF</abbr>, <span class="num">133</span>&nbsp;<abbr>KB</abbr> )</a></h4>
             </hgroup>
             <p>Article about the twenty years of graphic design materials of the Papp Group's exhibitions
           </article>
 
-          <article>
+          <article class="subentry">
             <hgroup class="subheading">
               <p class="date">2021
               <h4><a href="https://gergozambo.com/docs/zambo-gergo-szines-szurkeseg.pdf" target="_blank" rel="noopener noreferrer">Colorful grayness ( <abbr>PDF</abbr>, <span class="num">131</span> <abbr>KB</abbr> )</a></h4>
@@ -405,7 +436,7 @@
             <p>Article about the meaning of pop art in Hungarian poster design in the sixties and seventies
           </article>
 
-          <article>
+          <article class="subentry">
             <hgroup class="subheading">
               <p class="date">2021
               <h4><a href="https://gergozambo.com/docs/zambo-gergo-jancso-miklos-filmjeinek-plakatjai-a-rendszervaltasig.pdf" target="_blank" rel="noopener noreferrer">Poster shot ( <abbr>PDF</abbr>, <span class="num">119</span> <abbr>KB</abbr> )</a></h4>
@@ -430,12 +461,14 @@
         <img src="/img/gergo-zambo-designer-portrait.jpg" width=700 height=700 alt="Portrait of Gergő Zámbó">
       </picture>
 
-      <p class="body-copy no-indent">I am a product, web, and graphic designer leading projects and teams through design processes to create business value and solve problems.
-      <p class="body-copy">With over ten years of experience, I have collaborated on high-impact, large projects for some of the most famous companies.
-      <p class="body-copy">I have redesigned global brands at <a href="https://www.vml.com/"><abbr title="Valentine, McCormick, Ligibel">VML</abbr></a>, led an <abbr>AI</abbr> research group at one of the first <abbr>UX</abbr> agencies in Hungary, and led product design on <abbr title="governance, risk, and compliance">GRC</abbr> apps at <a href="https://www.diligent.com/">Diligent</a>. I am currently working at <a href="https://www.morganstanley.com/">Morgan Stanley</a> as a senior <abbr>UX</abbr> designer.
-      <p class="body-copy">I facilitate discussions between design, engineering, and product teams through my background in front-end technologies and marketing. People know me for my proactive, straightforward, and to-the-point work ethic.
-      <p class="body-copy">I believe that understanding the people, businesses, systems, and the historical context of design artifacts enables you to devise more varied solutions during design processes of all kinds.
-      <p class="body-copy">When my time and energy allow, I design books, help institutions with communication and design problems, research Hungarian graphic design, and develop open-source literary websites to give back to my local community.
+      <div class="intro-text">
+        <p class="body-copy no-indent">I am a product, web, and graphic designer leading projects and teams through design processes to create business value and solve problems.
+        <p class="body-copy">With over ten years of experience, I have collaborated on high-impact, large projects for some of the most famous companies.
+        <p class="body-copy">I have redesigned global brands at <a href="https://www.vml.com/"><abbr title="Valentine, McCormick, Ligibel">VML</abbr></a>, led an <abbr>AI</abbr> research group at one of the first <abbr>UX</abbr> agencies in Hungary, and led product design on <abbr title="governance, risk, and compliance">GRC</abbr> apps at <a href="https://www.diligent.com/">Diligent</a>. I am currently working at <a href="https://www.morganstanley.com/">Morgan Stanley</a> as a senior <abbr>UX</abbr> designer.
+        <p class="body-copy">I facilitate discussions between design, engineering, and product teams through my background in front-end technologies and marketing. People know me for my proactive, straightforward, and to-the-point work ethic.
+        <p class="body-copy">I believe that understanding the people, businesses, systems, and the historical context of design artifacts enables you to devise more varied solutions during design processes of all kinds.
+        <p class="body-copy">When my time and energy allow, I design books, help institutions with communication and design problems, research Hungarian graphic design, and develop open-source literary websites to give back to my local community.
+      </div>
 
       <ul class="cta-list">
         <li><a class="primary" href="https://gergozambo.com/docs/gergo-zambo-resume-2024-12-08.pdf" target="_blank" rel="noopener noreferrer">Download resume ( <abbr>PDF</abbr>, 112 <abbr>KB</abbr> )</a>
@@ -452,7 +485,7 @@
 
       <p class="body-copy no-indent">These companies and designers influenced what I do and helped me create better designs. This very incomplete list is a tribute to them. If you think you should be listed here, thank you as well. You are in my thoughts and heart.
 
-      <ul>
+      <ul class="designer-list">
         <li><a href="https://stuffandnonsense.co.uk/">Andy Clarke</a>
         <li><a href="https://atlasrise.io/">Atlas, Rise!</a>
         <li><a href="https://www.cinketype.com/">Cinketype</a>
@@ -482,9 +515,11 @@
         <p>Manifesto, design decisions, and site history
       </hgroup>
 
-      <p class="body-copy no-indent">If you wonder why my website looks like a title page from the 18th century, it is because this was my goal. It might look utterly boring to today's standards, but playing around with the rich typographical heritage of book design in a digital medium was what got me interested.
-      <p class="body-copy">It draws inspiration from sustainable web design with a love for transitional Scotch typefaces. I started with the self-imposed design constraint to use only Georgia. It is sustainable and one of the best fonts ever made for screens.
-      <p class="body-copy">The source code of this website is substantially less than the current average page size reference. It uses mobile-first <abbr title="cascading style sheets">CSS</abbr> and responsive typography techniques. It validates ﬂawlessly and is accessible to a wide range of users.
+      <div class="intro-text">
+        <p class="body-copy no-indent">If you wonder why my website looks like a title page from the 18th century, it is because this was my goal. It might look utterly boring to today's standards, but playing around with the rich typographical heritage of book design in a digital medium was what got me interested.
+        <p class="body-copy">It draws inspiration from sustainable web design with a love for transitional Scotch typefaces. I started with the self-imposed design constraint to use only Georgia. It is sustainable and one of the best fonts ever made for screens.
+        <p class="body-copy">The source code of this website is substantially less than the current average page size reference. It uses mobile-first <abbr title="cascading style sheets">CSS</abbr> and responsive typography techniques. It validates ﬂawlessly and is accessible to a wide range of users.
+      </div>
 
       <dl>
         <dt>What's with all the ampersands?</dt>
@@ -501,12 +536,11 @@
         <dd>I am aware. I try to do my fair share of pro-social and cultural work outside my working hours. If I can make a difference on a larger scale and generate business value in one place, that is even better.</dd>
       </dl>
 
-      <h4>Previous versions</h4>
-
-      <ul>
-        <li><a href="https://gergozambo.com/website-archive/v-1.html">Version 1.0 ( 2017 – 2022 )</a>
-        <li><a href="https://gergozambo.com/website-archive/v-1-5.html">Version 1.5 ( 2022 – 2025 )</a>
-      </ul>
+      <dl class="version-list">
+        <dt>Previous versions</dt>
+        <dd><a href="https://gergozambo.com/website-archive/v-1.html">Version 1.0 ( 2017 – 2022 )</a></dd>
+        <dd><a href="https://gergozambo.com/website-archive/v-1-5.html">Version 1.5 ( 2022 – 2025 )</a></dd>
+      </dl>
 
     </section>
 
@@ -519,7 +553,9 @@
       <p>Text me or follow my work
     </hgroup>
 
-    <p>Get in touch with me via email ( see my address in <a href="https://gergozambo.com/docs/gergo-zambo-resume-2024-12-08.pdf" target="_blank" rel="noopener noreferrer">my resume [ <abbr>PDF</abbr>, 112 <abbr>KB</abbr> ]</a> ) or <a href="https://www.linkedin.com/in/gergozambo/">LinkedIn</a>. Follow me on <a href="https://www.behance.net/zambogergo">Behance</a> or on <a href="https://fontsinuse.com/designers/21199/gergo-zambo">Fonts in Use</a>.
+  <div class="heading">
+    <p>Get in touch with me via email ( see my address in <br><a href="https://gergozambo.com/docs/gergo-zambo-resume-2024-12-08.pdf" target="_blank" rel="noopener noreferrer">my resume [ <abbr>PDF</abbr>, 112 <abbr>KB</abbr> ]</a> ) or <a href="https://www.linkedin.com/in/gergozambo/">LinkedIn</a>. Follow me on <a href="https://www.behance.net/zambogergo">Behance</a> or on <a href="https://fontsinuse.com/designers/21199/gergo-zambo">Fonts&nbsp;in&nbsp;Use</a>.
+  </div>
 
     <ul class="cta-list">
       <li><a class="primary" href="https://gergozambo.com/docs/gergo-zambo-resume-2024-12-08.pdf" target="_blank" rel="noopener noreferrer">Download resume ( <abbr>PDF</abbr>, 112 <abbr>KB</abbr> )</a>
