@@ -163,7 +163,7 @@
     }
     @media (min-width: 42em) {
       .brand-list { margin: 0 2.25rem; }
-      .designer-list { column-count: 2; gap: 1.5rem; max-width: 1024px; margin: 2rem auto; }
+      .designer-list { column-count: 2; orphans: 1; widows: 3; gap: 1.5rem; max-width: 1024px; margin: 2rem auto; }
       .version-list dd { display: inline; padding-right: 2rem; }
     }
 
@@ -173,14 +173,14 @@
       .lead span { margin: 2.5rem 0; }
       .caps.tight { margin: 2.5rem 8rem; }
       .brand-list { margin: 2.5rem 2.5rem 1.5rem; }
-      .intro-text { column-count: 2; orphans: 2; widows: 3; gap: 1.5rem; max-width: 1440px; margin: 0 auto; }
+      .intro-text { column-count: 2; orphans: 1; widows: 3; gap: 1.5rem; max-width: 1440px; margin: 0 auto; }
       img { margin-top: 4rem; }
       .heading { margin-left: auto; margin-right: auto; }
       article .heading { max-width: 80%; }
-      .heading + p { margin: 3rem auto 0; column-count: 2; orphans: 2; widows: 3; gap: 1.5rem; max-width: 1024px; }
+      .heading + p { margin: 3rem auto 0; column-count: 2; orphans: 1; widows: 3; gap: 1.5rem; max-width: 1024px; }
       .subentry { max-width: 1024px; margin: 0 auto; }
-      #about .heading + .intro-text { column-count: 2; gap: 1.5rem; max-width: 1024px; }
-      dd { column-count: 2; gap: 1.5rem; }
+      #about .heading + .intro-text { column-count: 2; orphans: 1; widows: 3; gap: 1.5rem; max-width: 1024px; }
+      dd { column-count: 2; gap: 1.5rem; orphans: 1; widows: 3; }
       .subentry { margin: 3.5rem auto 0; }
     }
 
@@ -195,6 +195,14 @@
       #about .heading, #contact { margin-top: 8rem; }
       .designer-list { column-count: 4; gap: 2rem; }
       dl { margin: 4rem auto 0; }
+      img {
+        transition: transform 0.75s ease;
+        will-change: transform;
+      }
+      
+      img:hover {
+        transform: perspective(1000px) translateZ(2rem) translateY(-0.15rem);
+      }
     }
 
     @media (min-width: 80em) {
@@ -401,7 +409,7 @@
               <p class="date">2024
               <h4><a href="https://www.instagram.com/edit_budapest/">Social media design kit for ed<span class="italic">i</span>t</a></h4>
             </hgroup>
-            <p>Designed a social media kit to help the edit design collective increase the awareness of local design studios and design culture
+            <p>Designed a social media kit to help the ed<span class="italic">i</span>t design collective increase the awareness of local design studios and design culture
           </article>
 
       </section>
@@ -425,7 +433,7 @@
           <article class="subentry">
             <hgroup class="subheading">
               <p class="date">2021
-              <h4><a href="https://gergozambo.com/docs/zambo-gergo-a-papp-csoport-kiallitasai.pdf" target="_blank" rel="noopener noreferrer">The exhibitions of the Papp Group&nbsp;( <abbr>PDF</abbr>, <span class="num">133</span>&nbsp;<abbr>KB</abbr> )</a></h4>
+              <h4><a href="https://gergozambo.com/docs/zambo-gergo-a-papp-csoport-kiallitasai.pdf" target="_blank" rel="noopener noreferrer">The Papp Group&nbsp;( <abbr>PDF</abbr>, <span class="num">133</span>&nbsp;<abbr>KB</abbr> )</a></h4>
             </hgroup>
             <p>Article about the twenty years of graphic design materials of the Papp Group's exhibitions
           </article>
@@ -469,7 +477,7 @@
         <p class="body-copy">I have redesigned global brands at <a href="https://www.vml.com/"><abbr title="Valentine, McCormick, Ligibel">VML</abbr></a>, led an <abbr>AI</abbr> research group at one of the first <abbr>UX</abbr> agencies in Hungary, and led product design on <abbr title="governance, risk, and compliance">GRC</abbr> apps at <a href="https://www.diligent.com/">Diligent</a>. I am currently working at <a href="https://www.morganstanley.com/">Morgan Stanley</a> as a senior <abbr>UX</abbr> designer.
         <p class="body-copy">I facilitate discussions between design, engineering, and product teams through my background in front-end technologies and marketing. People know me for my proactive, straightforward, and to-the-point work ethic.
         <p class="body-copy">I believe that understanding the people, businesses, systems, and the historical context of design artifacts enables you to devise more varied solutions during design processes of all kinds.
-        <p class="body-copy">When my time and energy allow, I design books, help institutions with communication and design problems, research Hungarian graphic design, and develop open-source literary websites to give back to my local community.
+        <p class="body-copy">When my time allows, I design books, advise institutions on communication and design, research Hungarian graphic design, and create open-source literary websites to support my local community.
       </div>
 
       <ul class="cta-list">
@@ -485,7 +493,7 @@
         <p>Studios and designers who influenced my work
       </hgroup>
 
-      <p class="body-copy no-indent">This is a list of some of the companies and designers I look up to and whos work I enjoy. This incomplete list is a tribute to them. If you think you should be listed here, thank you as well. You are in my thoughts and heart.
+      <p class="body-copy no-indent">The following is a list of companies and designers whose work I admire. This incomplete list is a tribute to them. If you think you should be listed here, thank you as well. You are in my thoughts and heart.
 
       <ul class="designer-list">
         <li><a href="https://stuffandnonsense.co.uk/">Andy Clarke</a>
