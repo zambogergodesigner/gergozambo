@@ -112,9 +112,8 @@
     #intro hgroup { margin-top: 0; }
     #intro { padding-top: 3rem; }
 
-    .body-copy { margin: 0; hyphens: auto; text-indent: 2rem; orphans: 2; widows: 2; }
+    .body-copy { margin: 0; hyphens: auto; text-indent: 1.5rem; orphans: 2; widows: 2; }
     .body-copy.no-indent { text-indent: 0; }
-    .body-copy.no-indent::first-line { text-transform: uppercase; letter-spacing: .1em; }
 
     .lead { text-align: center; line-height: 1; text-transform: uppercase; letter-spacing: .1em; margin-top: 2rem; }
     .lead span { display: block; margin: 1.5rem 0; font-size: clamp(1rem, 0.75rem + 1.25vw, 1.65rem); line-height: 1.35; text-transform: initial; }
@@ -154,7 +153,7 @@
     }
 
     @media (min-width: 33em) {
-      .brand-list li { display: inline-block; padding-right: 2.5rem; vertical-align: middle; }
+      .brand-list li { display: inline-block; padding: 0 1.25rem 1rem; vertical-align: middle; }
       .cta-list { margin-top: 3rem; }
       .cta-list li { display: inline-block; margin: 0 1rem; }
       .cta-list li a { padding: .75rem 2rem; }
@@ -182,15 +181,17 @@
       .subentry { max-width: 1024px; margin: 0 auto; }
       #about .heading + .intro-text { column-count: 2; gap: 1.5rem; max-width: 1024px; }
       dd { column-count: 2; gap: 1.5rem; }
-
+      .subentry { margin: 3.5rem auto 0; }
     }
 
     @media (min-width: 64em) {
-      .brand-list li { padding-bottom: 1.5rem; padding-right: 3.5rem; }
+      body { margin: 0; padding: 0 2.5rem 0; }
+      .brand-list { margin: 2.5rem 4rem 1.5rem; }
+      .brand-list li { padding: 0 2rem 1.5rem; }
+      .brand-list svg { transform: scale(1); }
       #works .heading:first-child { margin-top: 9rem; }
       #works .heading.anchor { margin-top: 4rem; }
       #about .heading:first-child { margin-top: 4rem; }
-      .brand-list svg { transform: scale(1); }
       #about .heading, #contact { margin-top: 8rem; }
       .designer-list { column-count: 4; gap: 2rem; }
       dl { margin: 4rem auto 0; }
@@ -480,11 +481,11 @@
 
 
       <hgroup class="heading">
-        <h3>Design influences</h3>
+        <h3>Designers I&nbsp;like</h3>
         <p>Studios and designers who influenced my work
       </hgroup>
 
-      <p class="body-copy no-indent">These companies and designers influenced what I do and helped me create better designs. This very incomplete list is a tribute to them. If you think you should be listed here, thank you as well. You are in my thoughts and heart.
+      <p class="body-copy no-indent">This is a list of some of the companies and designers I look up to and whos work I enjoy. This incomplete list is a tribute to them. If you think you should be listed here, thank you as well. You are in my thoughts and heart.
 
       <ul class="designer-list">
         <li><a href="https://stuffandnonsense.co.uk/">Andy Clarke</a>
@@ -534,7 +535,7 @@
 
       <dl>
         <dt>You know that there is more to design than generating business value, right?</dt>
-        <dd>I am aware. I try to do my fair share of pro-social and cultural work outside my working hours. If I can make a difference on a larger scale and generate business value in one place, that is even better.</dd>
+        <dd>I am aware. I try to do my fair share of pro-social and cultural work outside my working hours. If I can make a difference on a larger scale and generate business value at the same time, that is even better.</dd>
       </dl>
 
       <dl class="version-list">
@@ -555,7 +556,7 @@
     </hgroup>
 
   <div class="heading">
-    <p>Get in touch with me via email ( see my address in <br><a href="https://gergozambo.com/docs/gergo-zambo-resume-2024-12-08.pdf" target="_blank" rel="noopener noreferrer">my resume [ <abbr>PDF</abbr>, 112 <abbr>KB</abbr> ]</a> ) or <a href="https://www.linkedin.com/in/gergozambo/">LinkedIn</a>. Follow me on <a href="https://www.behance.net/zambogergo">Behance</a> or on <a href="https://fontsinuse.com/designers/21199/gergo-zambo">Fonts&nbsp;in&nbsp;Use</a>.
+    <p>Get in touch with me via email ( see my address in my resume ) or <a href="https://www.linkedin.com/in/gergozambo/">LinkedIn</a>. Follow me on <a href="https://www.behance.net/zambogergo">Behance</a> or <a href="https://fontsinuse.com/designers/21199/gergo-zambo">Fonts&nbsp;in&nbsp;Use</a>.
   </div>
 
     <ul class="cta-list">
