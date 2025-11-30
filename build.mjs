@@ -46,7 +46,7 @@ async function minifyHtmlFiles() {
       // Whitespace and comments
       collapseWhitespace: true,
       collapseInlineTagWhitespace: true,
-      conservativeCollapse: false,
+      conservativeCollapse: true, // Preserve whitespace around inline elements like <a>
       removeComments: true,
       // Attributes
       removeRedundantAttributes: true,
